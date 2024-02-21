@@ -1,0 +1,22 @@
+<div style="display: flex; justify-content: flex-end;">
+<a href="<%= new_restaurant_path %>" class="btn btn-warning mb-5 ">Add a restaurant</a>
+</div>
+
+<div style="display: flex">
+<% @restaurants.each do |restaurant| %>
+  <div class="card" style="width: 18rem;">
+    <img src="https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="img restaurant">
+    <div class="card-body" style="height: 85px;">
+      <h5 class="card-title"><%= restaurant.name %></h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">🌎 <%= restaurant.address %></li>
+      <li class="list-group-item">📞 <%= restaurant.phone_number %></li>
+      <li class="list-group-item">🍰 <%= restaurant.category %></li>
+    </ul>
+    <div class="card-body">
+      <a href="<%= restaurant_path(restaurant) %>" class="card-link">See details</a>
+    </div>
+  </div>
+<% end %>
+</div>
